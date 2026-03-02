@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="FreeChat PLUS - Chat with our state-of-the-art AI bot!" property="og:title" />
+    <meta content="Free AI chatbot/LLM to chat with!" property="og:description" />
+    <meta content="https://THIS-SITE" property="og:url" />
+    <meta content="https://THIS-SITE/IMAGE" property="og:image" />
+    <meta content="#3c3c3c" data-react-helmet="true" name="theme-color" />
+    <link rel="icon" type="image/x-icon" href="favicon">
+    <link rel="stylesheet" href="style.css">
+    <title>FreeChat PLUS</title>
+</head>
+<body class="sys" id="the_body">
+    <main class="row">
+        <div class="left_column column">
+            <form id="create_new_chat" class="before">
+                <textarea name="usr_msg" id="usr_msg" placeholder="Chat with an AI bot..." spellcheck="false" autofocus="true" tabindex="0" class="before"></textarea>
+                <label class="custom_file_upload">Attach image
+                    <input type="file" accept="image/*">
+                </label>
+            </form>
+        </div>
+        <div class="seperator column"></div>
+        <div class="right_column column">
+            <div class="settings">
+                <div class="dark_mode_switcher">
+                    <button id="theme_switcher" onclick="switch_theme()" tabindex="1">Theme: System default</button>
+                </div>
+            </div>
+            <hr>
+            <div class="prev_chats_list">
+                <h1 class="prev_chats_header">Jump Back Into a Previous Conversation</h1>
+                <p id="prev_chats_display" class="prev_chats_display">As soon as you have a conversation, it will show up here.</p>
+                <ul class="prev_chats" id="prev_chats"></ul>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
