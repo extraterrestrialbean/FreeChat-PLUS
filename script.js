@@ -1,7 +1,8 @@
 const themeSwitcher = document.getElementById("theme_switcher");
 const body = document.getElementById("the_body");
 const usrMsgBox = document.getElementById("usr_msg");
-const prevChats = document.getElementById("prev_chats")
+const prevChats = document.getElementById("prev_chats");
+const newChat = document.getElementById("new_chat");
 
 let currentTheme = "System default";
 let currentChat;
@@ -40,15 +41,24 @@ usrMsgBox.addEventListener("keypress", e => {
                 chatArray.unshift(usrSubmission);
             };
             currentChat = chatArray[0];
-            document.getElementById("create_new_chat").setAttribute("class", "after");
+            document.getElementById("create_msg").setAttribute("class", "after");
             usrMsgBox.setAttribute("class", "after");
+            newChat.setAttribute("class", "create_new_chat")
         };
         // SEND THE MESSAGE IN THE CURRENT CHAT
     }
 });
 
+function createNewChat() {
+    document.getElementById("create_msg").setAttribute("class", "before");
+    usrMsgBox.setAttribute("class", "before");
+    let chatList = prevChats.querySelectorAll('li');
+    currentChat = undefined;
+    chatList.forEach((chat) => {chat.classList.remove("current_chat")});
+}
+
 //theme switcher
-function switch_theme() {
+function switchTheme() {
     switch(currentTheme) {
         case "System default":
             currentTheme = "Light";

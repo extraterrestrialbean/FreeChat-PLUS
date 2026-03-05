@@ -99,6 +99,7 @@ hr {
 
 ul /* unordered list (list container) */ {
     margin: 3%;
+    width: 100%;
 }
 
 li /* list item */ {
@@ -162,7 +163,7 @@ button:hover,
     align-items: center;
 }
 
-#create_new_chat {
+#create_msg {
     width: min-content;
     height: min-content;
 
@@ -189,7 +190,7 @@ input[type="file"] {
 }
 
 
-#create_new_chat.after {
+#create_msg.after {
     margin-top: 67vh;
     /*            ^
                   |
@@ -325,3 +326,30 @@ input[type="file"] {
     display: table;
 }
 
+.create_new_chat {
+    height: 2em;
+    width: 2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: none;
+    background-color: rgb(214, 0, 203);
+}
+
+.create_new_chat:hover {
+    background-color: rgb(204, 0, 255);
+}
+
+.create_new_chat_none {
+    display: none;
+}
+
+.prev_chats_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

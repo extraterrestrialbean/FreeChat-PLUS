@@ -15,7 +15,7 @@
 <body class="sys" id="the_body">
     <main class="row">
         <div class="left_column column">
-            <form id="create_new_chat" class="before">
+            <form id="create_msg" class="before">
                 <textarea name="usr_msg" id="usr_msg" placeholder="Chat with an AI bot..." spellcheck="false" autofocus="true" tabindex="0" class="before"></textarea>
                 <!-- <label class="custom_file_upload">Attach image
                     <input type="file" accept="image/*">
@@ -26,12 +26,13 @@
         <div class="right_column column">
             <div class="settings">
                 <div class="dark_mode_switcher">
-                    <button id="theme_switcher" onclick="switch_theme()" tabindex="1">Theme: System default</button>
+                    <button id="theme_switcher" onclick="switchTheme()" tabindex="1">Theme: System default</button>
                 </div>
             </div>
             <hr>
             <div class="prev_chats_list">
                 <h1 class="prev_chats_header">Jump Back Into a Previous Conversation</h1>
+                <button class="create_new_chat_none" onclick="createNewChat()" id="new_chat"><image src="assets/add_dark.svg" id="create_new_plus"></image></button>  
                 <p id="prev_chats_display" class="prev_chats_display">As soon as you have a conversation, it will show up here.</p>
                 <ul class="prev_chats" id="prev_chats"></ul>
             </div>
