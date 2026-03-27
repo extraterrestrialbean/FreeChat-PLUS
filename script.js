@@ -40,7 +40,7 @@ usrMsgBox.addEventListener("keypress", e => {
                 		nameToGiveChat = usrSubmission;
             		};
 			if (chatArray.includes(nameToGiveChat)) {
-				nameToGiveChat = nameToGiveChat + " " + (Date.now().toString(36) + Math.random().toString(36).substr(2)).substring(4, 11);
+				nameToGiveChat = nameToGiveChat + " " + Math.round(Date.now() * Math.random()).toString(36);
 			};
 			prevChats.firstChild.innerHTML = nameToGiveChat;
 			chatArray.unshift(nameToGiveChat);
