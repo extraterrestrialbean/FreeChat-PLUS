@@ -7,6 +7,7 @@ const newChat = document.getElementById("new_chat");
 let currentTheme = "System default";
 let currentChat;
 let chatArray = [];
+let nameToGiveChat;
 
 
 // send message
@@ -27,19 +28,22 @@ usrMsgBox.addEventListener("keypress", e => {
         	if (usrMsgBox.classList.contains("before")) {
             		prevChats.prepend(document.createElement("li"));
             		prevChats.firstChild.setAttribute("tabindex", "3");
-            		prevChats.firstChild.setAttribute("onclick", "DO SOMETHING TO MAKE ME CURRENT()")
+            		prevChats.firstChild.setAttribute("onclick", "DO SOMETHING TO MAKE ME CURRENT()") // do this
             		document.getElementById("prev_chats_display").setAttribute("class", "display_none");
             		let chatList = prevChats.querySelectorAll('li');
             		chatList.forEach((chat) => {chat.classList.remove("current_chat")});
             		prevChats.firstChild.setAttribute("class", "current_chat");
             
             		if (usrSubmission.length > 30) {
-               	 		prevChats.firstChild.innerHTML = usrSubmission.substring(0, 30) + "…";
-               	 		chatArray.unshift(usrSubmission.substring(0, 30) + "…");
+               	 		nameToGiveChat = usrSubmission.substring(0, 30) + "…";
             		} else {
-                		prevChats.firstChild.innerHTML = usrSubmission;
-                		chatArray.unshift(usrSubmission);
+                		nameToGiveChat = usrSubmission;
             		};
+			if (chatArray.includes(nameToGiveChat)) {
+				nameToGiveChat = nameToGiveChat + " " + (Date.now().toString(36) + Math.random().toString(36).substr(2)).substring(4, 11);
+			};
+			prevChats.firstChild.innerHTML = nameToGiveChat;
+			chatArray.unshift(nameToGiveChat);
            	 	currentChat = chatArray[0];
             		document.getElementById("create_msg").setAttribute("class", "after");
             		usrMsgBox.setAttribute("class", "after");
