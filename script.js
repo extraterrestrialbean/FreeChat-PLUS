@@ -28,7 +28,6 @@ usrMsgBox.addEventListener("keypress", e => {
         	if (usrMsgBox.classList.contains("before")) {
             		prevChats.prepend(document.createElement("li"));
             		prevChats.firstChild.setAttribute("tabindex", "3");
-            		prevChats.firstChild.setAttribute("onclick", "DO SOMETHING TO MAKE ME CURRENT()") // do this
             		document.getElementById("prev_chats_display").setAttribute("class", "display_none");
             		let chatList = prevChats.querySelectorAll('li');
             		chatList.forEach((chat) => {chat.classList.remove("current_chat")});
@@ -44,6 +43,8 @@ usrMsgBox.addEventListener("keypress", e => {
 			};
 			prevChats.firstChild.innerHTML = nameToGiveChat;
 			chatArray.unshift(nameToGiveChat);
+			prevChats.firstChild.setAttribute("id", "chat-" + nameToGiveChat);
+			prevChats.firstChild.setAttribute("onclick", "makeCurrent(\"" + nameToGiveChat + "\")");
            	 	currentChat = chatArray[0];
             		document.getElementById("create_msg").setAttribute("class", "after");
             		usrMsgBox.setAttribute("class", "after");
@@ -52,6 +53,13 @@ usrMsgBox.addEventListener("keypress", e => {
         	// SEND THE MESSAGE IN THE CURRENT CHAT
     		}
 });
+
+function makeCurrent(chatToMakeCurrent) {
+	currentChat = chatArray[chatArray.indexOf(chatToMakeCurrent)];
+	let chatList = prevChats.querySelectorAll('li');
+	chatList.forEach((chat) => {chat.classList.remove("current_chat")});
+	document.getElementById("chat-" + chatToMakeCurrent).classList.add("current_chat");
+}
 
 function createNewChat() {
     	document.getElementById("create_msg").setAttribute("class", "before");
