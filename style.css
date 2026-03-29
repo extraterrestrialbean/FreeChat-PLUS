@@ -39,6 +39,17 @@ body.dark {
     color: light-dark(black, white);
 }
 
+span {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+a {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .display_none {
     display: none;
 }
@@ -115,6 +126,7 @@ li /* list item */ {
     border-top: 0.3em solid light-dark(rgb(240, 240, 240), rgb(60, 60, 60));
     border-left: 0.3em solid light-dark(rgb(240, 240, 240), rgb(60, 60, 60));
     border-radius: 1em;
+    cursor: pointer;
 }
 
 li:hover {
@@ -274,4 +286,23 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.disclosure_no_display {
+    display: none;
+}
+
+.disclosure {
+	background-color: light-dark(rgb(255, 255, 255), rgb(30, 30, 30));
+	position: absolute;
+	left: 0; 
+  	right: 0;
+	top: 0;
+	bottom: 0;
+  	margin: auto;	
+  	width: 50vw;
+	height: 50vh;
+	overflow: scroll;
+	padding: 1vh;
+	border: 1vh solid light-dark(rgb(240, 240, 240), rgb(60, 60, 60));
 }

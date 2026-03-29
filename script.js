@@ -3,8 +3,10 @@ const body = document.getElementById("the_body");
 const usrMsgBox = document.getElementById("usr_msg");
 const prevChats = document.getElementById("prev_chats");
 const newChat = document.getElementById("new_chat");
+const disclosures = document.getElementById("disclosures");
 
 let currentTheme = "System default";
+let displayDisclosure = false;
 let currentChat;
 let chatArray = [];
 let nameToGiveChat;
@@ -86,4 +88,16 @@ function switchTheme() {
             	break;
     	};
     	themeSwitcher.innerHTML = "Theme: " + currentTheme;
+}
+
+function showDisclosures() {
+	if (displayDisclosure == false) {
+		displayDisclosure = true;
+		disclosures.classList.remove("disclosure_no_display");
+		disclosures.classList.add("disclosure");
+	} else {
+		displayDisclosure = false;
+		disclosures.classList.remove("disclosure");
+		disclosures.classList.add("disclosure_no_display");
+	}
 }

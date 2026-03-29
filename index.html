@@ -13,6 +13,13 @@
     <title>FreeChat PLUS</title>
 </head>
 <body class="sys" id="the_body">
+    <div class="disclosure_no_display" id="disclosures">
+	    <span>
+	    	<h1>Disclosures</h1>
+		<a onclick="showDisclosures()" tabindex="0">Close</a>
+	    </span>
+	    <p>This site will never use cookies, try to fingerprint you, or deploy advertisements on this site. Additionally, there is no LLM on this website, your conversations actually get routed to a human on the other end. The font used on this site is sourced from <a target="_BLANK", href="https://www.dafont.com/protofo.font">https://www.dafont.com/protofo.font</a>.</p>
+    </div>
     <main class="row">
         <div class="left_column column">
             <form id="create_msg" class="before">
@@ -35,6 +42,7 @@
                 <button class="create_new_chat_none" onclick="createNewChat()" id="new_chat"><image src="assets/add_dark.svg" id="create_new_plus"></image></button>  
                 <p id="prev_chats_display" class="prev_chats_display">As soon as you have a conversation, it will show up here.</p>
                 <ul class="prev_chats" id="prev_chats"></ul>
+		<a onclick="showDisclosures()" tabindex="0">Disclosures</a>
             </div>
         </div>
     </main>
